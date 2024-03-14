@@ -1,0 +1,12 @@
+/*
+!/.gitignore
+!/bash
+!/fontconfig
+!/gtk
+!/hypr
+!/kde
+!/mako
+!/vim
+!/waybar
+
+/kitty

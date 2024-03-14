@@ -1,0 +1,8 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry
+
+[General]
+TerminalApplication=kitty
+
+[Colors:View]
+BackgroundNormal=#2E2E2E

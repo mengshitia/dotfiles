@@ -1,0 +1,110 @@
+{
+    "layer": "top",
+    "position": "top",
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+	"network",
+        "wireplumber",
+        "temperature",
+        "backlight",
+        "battery",
+        "tray",
+        "clock"
+    ],
+
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{id}{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "urgent": "*",
+        },
+        "persistent-workspaces": {
+            "*": 9,
+        },
+    },
+    "hyprland/submap": {
+        "format": "{}",
+        "max-length": 8,
+        "tooltip": false,
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "separate-outputs": true,
+    },
+    "hyprland/language": {
+        "format": "{}",
+    },
+    "cpu": {
+        "format": "Cpu:{usage}%",
+    },
+    "memory": {
+        "format": "Mem:{percentage}%"
+    },
+    "network": {
+        "format-alt": "{ifname}: {ipaddr}/{cidr}{icon}",
+        "format-disconnected": "",
+        "format-ethernet": "{ipaddr}/{cidr}{icon}",
+        "format-icons": ["🌐"],
+        "format-linked": "{ifname} (No IP){icon}",
+        "format-wifi": "Wifi({signalStrength}%){icon}",
+        "tooltip-format": "{ifname} via {gwaddr}{icon}",
+    },
+    "wireplumber": {
+        "format": "{volume}%{icon}",
+        "format-icons": ["🔈", "🔉", "🔊"],
+        "format-muted": "Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "helvum",
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C🌡️",
+    },
+    "backlight": {
+        "format": "{percent}%{icon}",
+        "format-icons": ["🌙", "☀️"],
+        "on-click": "brightnessctl -q s 80%",
+        "on-click-right": "brightnessctl -q s 20%",
+        "on-scroll-up": "brightnessctl -q s +17",
+        "on-scroll-down": "brightnessctl -q s 17-",
+    },
+    "battery": {
+        "format": "{capacity}%{icon}",
+        "format-alt": "{time}{icon}",
+        "format-charging": "{capacity}%🔌",
+        "format-icons": ["🪫", "🔋", "🔋", "🔋"],
+        "format-plugged": "{capacity}%🔌",
+        "states": {
+            "good": 90,
+            "warning": 25,
+            "critical": 15,
+        },
+    },
+    "tray": {
+        "spacing": 5
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+}
+
