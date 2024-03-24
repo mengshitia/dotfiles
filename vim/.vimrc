@@ -13,6 +13,7 @@ set smartindent
 set expandtab
 
 set cmdheight=1
+set shiftwidth=2
 set tabstop=2
 set encoding=utf-8
 set fileformats=unix,dos,mac
