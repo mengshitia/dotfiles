@@ -17,6 +17,7 @@
       "memory",
       "network",
       //"custom/pipewire",
+      "wireplumber",
       "temperature",
       "backlight",
       "battery",
