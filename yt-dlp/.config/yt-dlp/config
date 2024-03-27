@@ -1,0 +1,20 @@
+# Use proxy
+--proxy socks5://127.0.0.1:7898
+--socket-timeout=10
+
+--abort-on-error
+
+# Use cookies from browser
+--cookies-from-browser firefox
+
+# Download only the video, not the playlist
+--no-playlist
+
+# Save to
+--paths ~/Videos/
+
+# Select highest format if available
+--format=(bestvideo[height<=3840][vcodec^=av01]/bestvideo[height<=3840][vcodec^=vp]/bestvideo[height<=3840])+bestaudio/best
+
+--add-metadata
+--prefer-free-formats

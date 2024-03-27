@@ -9,5 +9,7 @@
 !/mc-input-fix
 !/vim
 !/waybar
+!/yt-dlp
 
 /kitty
+/vim/.vim
