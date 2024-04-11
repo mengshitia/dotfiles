@@ -1,6 +1,6 @@
 // vim: se ft=javascript:
 {
-    "height": 20,
+    "height": 24,
     "output": "eDP-1",
     "layer": "top",
     "position": "top",
