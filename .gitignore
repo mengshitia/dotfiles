@@ -1,0 +1,16 @@
+/*
+!/.gitignore
+!/bash
+!/fontconfig
+!/gtk
+!/hypr
+!/kde
+!/mako
+!/mc-input-fix
+!/vim
+!/waybar
+!/wayfire
+!/yt-dlp
+
+/kitty
+/vim/.vim
