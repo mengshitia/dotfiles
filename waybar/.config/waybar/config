@@ -1,114 +1,55 @@
-// vim: se ft=javascript:
 {
-    "height": 24,
-    "output": "eDP-1",
-    "layer": "top",
-    "position": "top",
-
-    "modules-left": [
-      "hyprland/workspaces",
-      "hyprland/submap"
-    ],
-    "modules-center": [
-      "hyprland/window"
-    ],
-    "modules-right": [
-      "cpu",
-      "memory",
-      "network",
-      //"custom/pipewire",
-      "wireplumber",
-      "temperature",
-      "backlight",
-      "battery",
-      "tray",
-      "clock"
-    ],
+  "layer": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["cpu", "memory", "disk", "battery", "wireplumber", "backlight", "temperature", "network", "clock"],
 
     "hyprland/workspaces": {
-      "active-only": false,
-      "all-outputs": true,
-      "format": "{id}{icon}",
-      "format-icons": {
-        "active": "",
-        "default": "",
-        "urgent": "*",
-      },
-      "persistent-workspaces": {
-        "*": 9,
-      },
+      "show-special": true
     },
-    "hyprland/submap": {
-      "format": "{}",
-      "max-length": 8,
-      "tooltip": false,
-    },
-    "hyprland/window": {
-      "format": "{title}",
-      "separate-outputs": true,
-    },
-    "hyprland/language": {
-      "format": "{}",
-    },
-    "cpu": {
-      "format": "Cpu:{usage}%",
-    },
-    "memory": {
-      "format": "Mem:{percentage}%",
-    },
-    "network": {
-      "format-alt": "{ifname}: {ipaddr}/{cidr}{icon}",
-      "format-disconnected": "",
-      "format-ethernet": "{ipaddr}/{cidr}{icon}",
-      "format-icons": ["🌐"],
-      "format-linked": "{ifname} (No IP){icon}",
-      "format-wifi": "Wifi({signalStrength}%){icon}",
-      "tooltip-format": "{ifname} via {gwaddr}{icon}",
-    },
-    "custom/pipewire": {
-      "tooltip": false,
-      "max-length": 6,
-      "exec": "$HOME/.config/waybar/scripts/pipewire.sh",
-      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-      "on-click-right": "helvum"
-    },
+
     "wireplumber": {
-      "format": "{volume}% {icon}",
-      "format-icons": ["🔈", "🔉", "🔊"],
-      "format-muted": "Muted",
+      "format": "VOL {volume}%",
+      "format-muted": "VOL -",
       "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-      "on-click-right": "helvum",
-    },
-    "temperature": {
-      "critical-threshold": 80,
-      "format": "{temperatureC}°C🌡️",
+      "tooltip": "false",
     },
     "backlight": {
-      "format": "{percent}%{icon}",
-      "format-icons": ["🌙", "☀️"],
+      "format": "BKL {percent}%",
       "on-click": "brightnessctl -q s 80%",
       "on-click-right": "brightnessctl -q s 20%",
-      "on-scroll-up": "brightnessctl -q s +17",
-      "on-scroll-down": "brightnessctl -q s 17-",
+      "scroll-step": 1.0
+    },
+    "cpu": {
+      "format": "CPU {usage}%"
+    },
+    "memory": {
+      "format": "MEM {percentage}%",
+      "tooltip-format": "{used} / {total} GiB"
+    },
+    "disk": {
+      "format": "HDD {percentage_used}%"
     },
     "battery": {
-      "format": "{capacity}%{icon}",
-      "format-alt": "{time}{icon}",
-      "format-charging": "{capacity}%🔌",
-      "format-icons": ["🪫", "🔋", "🔋", "🔋"],
-      "format-plugged": "{capacity}%🔌",
-      "states": {
-        "good": 90,
-        "warning": 25,
-        "critical": 15,
-      },
+      "format": "BAT {capacity}%",
+      "format-charging": "BAT+{capacity}%",
+      "format-plugged": "BAT~{capacity}%"
     },
-    "tray": {
-      "spacing": 5,
+    "temperature": {
+      "critial-threshold": 80,
+      "tooltip": false
+    },
+    "network": {
+      "format-alt": "NET {ipaddr}/{cidr}",
+      "format-disconnected": "NET -",
+      "format-ethernet": "NET eth",
+      "format-wifi": "NET wifi",
+      "tooltip-format-wifi": "{ipaddr}/{cidr} {ifname}\n{essid} {signalStrength}%",
+      "tooltip-format-ethernet": "{ipaddr}/{cidr} {ifname}",
     },
     "clock": {
-      "format": "{:L%Y-%m-%d %H:%M:%S}",
-      "tooltip-format": "<span font=\"NotoSansCJK 11\">      {:%Y %B}\n\n{calendar}</span>",
-      "interval": 1,
-    },
+      "format": "{:%m-%d  %R}",
+      "format-alt": "{:%F  %T %Z}",
+      "interval": 1
+    }
 }
