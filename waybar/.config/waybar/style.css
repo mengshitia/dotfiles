@@ -81,7 +81,7 @@ label:focus {
   background-color: #000000;
 }
 
-#wireplumber.muted {
+#pulseaudio.muted {
   color: #7f7f7f;
   font-weight: bold;
 }

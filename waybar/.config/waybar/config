@@ -2,17 +2,18 @@
   "layer": "top",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["cpu", "memory", "disk", "battery", "wireplumber", "backlight", "temperature", "network", "clock"],
+    "modules-right": ["cpu", "memory", "disk", "battery", "pulseaudio", "backlight", "temperature", "network", "clock"],
 
     "hyprland/workspaces": {
       "show-special": true
     },
 
-    "wireplumber": {
+    "pulseaudio": {
       "format": "VOL {volume}%",
-      "format-muted": "VOL -",
-      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-      "tooltip": "false",
+      "format-muted": "VOL off",
+      "on-click": "pamixer --toggle-mute",
+      "on-click-right": "pavucontrol",
+      "ignored-sinks": ["Easy Effect Sink"]
     },
     "backlight": {
       "format": "BKL {percent}%",
