@@ -48,8 +48,26 @@
       "tooltip-format-ethernet": "{ipaddr}/{cidr} {ifname}",
     },
     "clock": {
+      "actions": {
+        "on-click-right": "mode",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      },
+      "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "format": {
+          "months": "<span color='#22aacc'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today": "<span color='#ea6699'><b><u>{}</u></b></span>",
+        },
+        "on-scroll": 1
+      },
       "format": "{:%m-%d  %R}",
       "format-alt": "{:%F  %T %Z}",
+      "locale": "en_US.UTF-8",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "interval": 1
     }
 }
