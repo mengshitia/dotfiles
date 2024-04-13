@@ -94,3 +94,8 @@ label:focus {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+#network.disabled {
+  color: #7f7f7f;
+  font-weight: bold;
+}
