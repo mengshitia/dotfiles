@@ -1,0 +1,68 @@
+{
+  "layer": "top",
+    "modules-left": [],
+    "modules-center": [],
+    "modules-right": ["cpu", "memory", "battery", "pulseaudio", "backlight", "temperature", "network", "clock"],
+
+    "cpu": {
+      "format": "CPU {usage}%"
+    },
+    "memory": {
+      "format": "MEM {percentage}%",
+      "tooltip-format": "{used} / {total} GiB"
+    },
+    "battery": {
+      "format": "BAT {capacity}%",
+      "format-charging": "BAT+{capacity}%",
+      "format-plugged": "BAT~{capacity}%"
+    },
+    "pulseaudio": {
+      "format": "VOL {volume}%",
+      "format-muted": "VOL off",
+      "on-click": "pamixer --toggle-mute",
+      "on-click-right": "pavucontrol",
+      "ignored-sinks": ["Easy Effect Sink"]
+    },
+    "backlight": {
+      "format": "BKL {percent}%",
+      "on-click": "brightnessctl -q s 80%",
+      "on-click-right": "brightnessctl -q s 20%",
+      "scroll-step": 1.0
+    },
+    "temperature": {
+      "critial-threshold": 80,
+      "tooltip": false
+    },
+    "network": {
+      "format": "NET off",
+      "format-alt": "NET {ipaddr}/{cidr}",
+      "format-disconnected": "NET -",
+      "format-ethernet": "NET eth",
+      "format-wifi": "NET wifi",
+      "tooltip-format-wifi": "{ipaddr}/{cidr} {ifname}\n{essid} {signalStrength}%",
+      "tooltip-format-ethernet": "{ipaddr}/{cidr} {ifname}"
+    },
+    "clock": {
+      "actions": {
+        "on-click-right": "mode",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      },
+      "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "format": {
+          "months": "<span color='#22aacc'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today": "<span color='#ea6699'><b><u>{}</u></b></span>"
+        },
+        "on-scroll": 1
+      },
+      "format": "{:%m-%d  %R}",
+      "format-alt": "{:%F  %T %Z}",
+      "locale": "en_US.UTF-8",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "interval": 1
+    }
+}
