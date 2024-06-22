@@ -13,8 +13,8 @@ set smartindent
 set expandtab
 
 set cmdheight=1
-set shiftwidth=2
-set tabstop=2
+"set shiftwidth=2
+"set tabstop=2
 set encoding=utf-8
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
@@ -24,3 +24,9 @@ syntax on
 
 filetype indent on
 filetype plugin on
+
+if has("gui_running")
+  set background=dark
+  set guifont=Source\ Code\ Pro\ 12
+  colorscheme elflord
+endif
