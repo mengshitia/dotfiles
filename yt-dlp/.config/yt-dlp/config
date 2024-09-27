@@ -8,7 +8,7 @@
 --cookies-from-browser firefox
 
 # Download only the video, not the playlist
---no-playlist
+#--no-playlist
 
 # Save to
 --paths ~/Videos/
