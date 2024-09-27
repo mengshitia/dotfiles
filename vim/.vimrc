@@ -27,6 +27,7 @@ filetype plugin on
 
 if has("gui_running")
   set background=dark
-  set guifont=Source\ Code\ Pro\ 12
-  colorscheme elflord
+  set guifont=Source\ Code\ Pro\ 16
+  colorscheme lilypink
+  "colorscheme elflord
 endif
