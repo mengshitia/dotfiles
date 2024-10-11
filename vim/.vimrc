@@ -4,6 +4,9 @@ set ruler
 set number
 set wildmenu
 
+set cursorline
+set cursorcolumn
+
 set hlsearch
 set incsearch
 set smartcase
@@ -24,6 +27,8 @@ syntax on
 
 filetype indent on
 filetype plugin on
+
+packadd comment
 
 if has("gui_running")
   set background=dark
