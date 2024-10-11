@@ -12,6 +12,7 @@
 !/waybar
 !/wayfire
 !/yt-dlp
+!/zsh
 
 /kitty
 /vim/.vim
