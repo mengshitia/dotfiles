@@ -43,11 +43,12 @@ filetype plugin on
 
 packadd comment
 
+colorscheme habamax
+
 if has("gui_running")
   set mousemodel=popup
   set columns=90
   set lines=32
-  "colorscheme elflord
-  colorscheme lilypink
-  set guifont=Source\ Code\ Pro\ 16
+  "colorscheme lilypink
+  set guifont=Monospace\ 16
 endif
