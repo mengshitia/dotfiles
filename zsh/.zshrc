@@ -45,3 +45,7 @@ zle -N edit-command-line
 # Esc + ^E
 bindkey '\e^E' edit-command-line
 
+# bind the Delete key
+# here is "^[[3~"
+bindkey "^[[3~" delete-char
+
