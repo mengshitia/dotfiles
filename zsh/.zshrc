@@ -49,3 +49,7 @@ bindkey '\e^E' edit-command-line
 # here is "^[[3~"
 bindkey "^[[3~" delete-char
 
+# use Shift + Tab to reverse menu complete
+# here the code is "^[[Z"
+bindkey "^[[Z" reverse-menu-complete
+
