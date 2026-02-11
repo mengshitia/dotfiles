@@ -6,12 +6,10 @@
 !/gtk
 !/kde
 !/mako
-!/mc-input-fix
 !/vim
 !/waybar
 !/wayfire
 !/yt-dlp
 !/zsh
 
-/kitty
 /vim/.vim
