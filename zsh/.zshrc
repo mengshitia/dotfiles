@@ -16,14 +16,31 @@ compinit
 
 # prompt
 setopt correct
-_prompt='%F{red}[%f%F{blue}%B%D{%Y/%m/%d %T %Z}%b%F{red}]%f%F{red}[%f%F{green}%l%f%F{red}]%f
-%F{red}<%f%F{magenta}%B%n%F{white}%b@%F{cyan}%B⮝%b %F{white}:%F{yellow}%b%~%F{red}>%f
-%fzsh%(2L./%L.) %F{white}%h %B%(!.%F{red}#.%F{green}>) %b%f%k'
-_prompt_right='%F{red}%B%(?..E:(%?%))%b%F{yellow}%B%(1j. bg:%j.)'
-_prompt_2='%F{cyan}%_%f> %b%f%k'
-export PS1=$_prompt
-export RPS1=$_prompt_right
-export PS2=$_prompt_2
+# Set prompt_subst to use '${vcs_info_msg_0_}' directly in the prompt.
+setopt prompt_subst
+
+_pr_date='%F{magenta}[%F{cyan}%D{%F %T %Z}%F{magenta}]%f'
+_pr_tty='%F{magenta}[%F{green}%l%F{magenta}]%f'
+_pr_user='%F{green}%n%f'
+_pr_host='%B%F{blue}%M%f%b'
+_pr_dir='%F{yellow}%~%f'
+_pr_zsh='%fzsh%(2L./%L.)'
+_pr_hist='%B%h%b'
+_pr_priv='%(!.%B%F{red}#%f.%B%F{green}>%f%b)'
+_pr_job='%(1j. [%F{yellow}%B%j%b%f].)'
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%:%r'
+precmd () { vcs_info }
+
+export PS1='${_pr_date}${_pr_tty}
+%F{magenta}<%f${_pr_user}@${_pr_host}:${_pr_dir}%F{magenta}>%f
+${_pr_zsh} ${_pr_hist}${_pr_job} %U${vcs_info_msg_0_}%u${_pr_priv} '
+# Show error status on last command if an error was occurred.
+export RPS1='%(?..%K{red}%B%F{white}E:(%?%)%f%b%k)'
+export PS2='%F{cyan}(%_)%f> %b%f%k'
 
 # optimize
 setopt no_beep
