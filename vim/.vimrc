@@ -47,8 +47,10 @@ colorscheme habamax
 
 if has("gui_running")
   set mousemodel=popup
-  set columns=90
-  set lines=32
+  "set columns=90
+  "set lines=32
   "colorscheme lilypink
   set guifont=Monospace\ 16
+  " Remove toolbar:
+  set guioptions-=T
 endif
